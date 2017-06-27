@@ -21,7 +21,7 @@ restService.post('/hook', function (req, res) {
                 speech = '';
 
                 if (requestBody.result.fulfillment) {
-                    speech += requestBody.result.fulfillment.speech;
+                    speech += requestBody.result.parameters.nombre_empresa;
                     speech += ' ';
                 }
 
@@ -36,7 +36,7 @@ restService.post('/hook', function (req, res) {
         return res.json({
             speech: speech,
             displayText: speech,
-            source: 'apiai-webhook-sample'
+            source: 'apiai-webhook-jjh'
         });
     } catch (err) {
         console.error("Can't process request", err);
