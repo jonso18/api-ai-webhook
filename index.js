@@ -27,7 +27,11 @@ restService.post('/hook', function (req, res) {
                     nombre += requestBody.result.parameters.nombre_empresa;
                     dirempresa += requestBody.result.parameters.direccion_empresa;
                     speech += ' ';
-                    res.send("http://writedocuments.azurewebsites.net/template.php?nombre=nombre&direccion=dirempresa&municipio=tolima&provincia=pruebas&cp=1000&telefono=2629831");
+                    
+                    restService.get('http://writedocuments.azurewebsites.net/template.php?nombre=nombre&direccion=dirempresa&municipio=tolima&provincia=pruebas&cp=1000&telefono=2629831");
+', function(req, res) {
+                            res.send();
+                    });
                     
                 }
 
@@ -55,6 +59,8 @@ restService.post('/hook', function (req, res) {
         });
     }
 });
+
+
 
 restService.listen((process.env.PORT || 5000), function () {
     console.log("Server listening");
