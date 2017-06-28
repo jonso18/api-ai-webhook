@@ -27,7 +27,7 @@ restService.post('/hook', function (req, res) {
                     nombre += requestBody.result.parameters.nombre_empresa;
                     dirempresa += requestBody.result.parameters.direccion_empresa;
                     speech += ' ';
-                    restService.get("http://writedocuments.azurewebsites.net/template.php?nombre=nombre&direccion=dirempresa&municipio=tolima&provincia=pruebas&cp=1000&telefono=2629831");
+                    res.send("http://writedocuments.azurewebsites.net/template.php?nombre=nombre&direccion=dirempresa&municipio=tolima&provincia=pruebas&cp=1000&telefono=2629831");
                     
                 }
 
